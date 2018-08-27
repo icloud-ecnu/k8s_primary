@@ -21,13 +21,13 @@ You can google how to build a nfs cluster according to the os you use.Here are s
 3. kubectl describe pods pod_name     # get the details information of the pod process.
 4. kubectl logs pod_name    # get logs of the first container in the pod.
 5. kubectl get pods | grep Evicted | awk '{print $1}' | xargs kubectl delete pod    # delete all evicted pods
-6. kubectl delete replicaset cifar10-ps-0
-   kubectl delete replicaset cifar10-worker-0
-   kubectl delete replicaset cifar10-worker-1
-   kubectl delete replicaset cifar10-worker-2
-   kubectl delete services cifar10-ps-0
-   kubectl delete services cifar10-worker-0
-   kubectl delete services cifar10-worker-1
+6. kubectl delete replicaset cifar10-ps-0\\
+   kubectl delete replicaset cifar10-worker-0\\
+   kubectl delete replicaset cifar10-worker-1\\
+   kubectl delete replicaset cifar10-worker-2\\
+   kubectl delete services cifar10-ps-0\\
+   kubectl delete services cifar10-worker-0\\
+   kubectl delete services cifar10-worker-1\\
    kubectl delete services cifar10-worker-2     # delete the services and replicaset,it can save some time for you.
 7. kubectl exec -it pod_name sh(/bin/bash)      # enter terminal of the first container.
 8. Train_dir is in the dir /tmp/cifar10_train.
