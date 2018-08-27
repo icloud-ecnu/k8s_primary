@@ -2,8 +2,7 @@
 ---
 Our goal is to run the distributed tensorflow in a kubernetes cluster.Firstly,we plan to run distributed cifar10 which is included in the models module of tensorflow.
 
-# 一、 Build docker image
----
+## 一、 Build docker image
 We build a docker image including the image tensorflow:lateset, the models directory and our cifar10_cluster_train.py.
 1. Make a dir named cifar10 including Dockerfile and dir models. 
 2. cd cifar10
@@ -11,15 +10,13 @@ We build a docker image including the image tensorflow:lateset, the models direc
 4. docker push your_docker_account_name/your_repositories_name:tag
 Then,we can pull the image we build from our docker hub account when we define rc.yaml.
 
-# 二、 Create a persistent volume for the cluster
----
+## 二、 Create a persistent volume for the cluster
 You can google how to build a nfs cluster according to the os you use.Here are some tips:
 1. Make sure your firewalld service is turned off and selinux is permissive ("getenforce" on centos).
 2. If you seek in some trouble hard to deal with ,run"iptables -P FORWARD ACCEPT" maybe amazing.
 3. kubectl create -f (the files we give)
 
-# 三、 Create services and replicaset for the application.
----
+## 三、 Create services and replicaset for the application.
 1. kubectl create -f myjob.template      # run it on the master host.We define 4 services for 4 pods.
 2. kubectl get pods -o wide     # get the name and status of your pods and which node each pod was scheduled on.
 3. kubectl describe pods pod_name     # get the details information of the pod process.
