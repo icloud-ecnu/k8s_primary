@@ -1,5 +1,5 @@
 # k8s_primary
-Our goal is to run the distributed tensorflow in a kubernetes cluster.Firstly,we plan to run distributed cifar10 which is included in the models module of tensorflow.
+Our goal is to run the distributed tensorflow in a kubernetes cluster. Firstly, we plan to run distributed cifar10 which is included in the models module of tensorflow.
 
 ## 一、 Build docker image
 We build a docker image including the image tensorflow:lateset, the models directory and our cifar10_cluster_train.py.
